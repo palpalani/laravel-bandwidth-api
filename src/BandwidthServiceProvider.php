@@ -2,6 +2,8 @@
 
 namespace palPalani\Bandwidth;
 
+use BandwidthLib\BandwidthClient;
+use BandwidthLib\Configuration;
 use palPalani\LaravelBandwidthApi\Commands\LaravelBandwidthApiCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -27,8 +29,8 @@ class BandwidthServiceProvider extends PackageServiceProvider
     {
         $config = $this->app->make('config');
 
-        $this->app->bind('bandwidth', static function () use ($config): Mailgun {
-            $config = new BandwidthLib\Configuration(
+        $this->app->bind('bandwidth', static function () use ($config) {
+            $config = new Configuration(
                 [
                     'messagingBasicAuthUserName' => $config->get('bandwidth.messaging.username'),
                     'messagingBasicAuthPassword' => $config->get('bandwidth.messaging.password'),
@@ -41,7 +43,15 @@ class BandwidthServiceProvider extends PackageServiceProvider
                 ]
             );
 
-            return new BandwidthLib\BandwidthClient($config);
+            return new BandwidthClient($config);
+        });
+
+        $this->app->bind('phone', static function () use ($config) {
+            return new \Iris\Client(
+                $config->get('bandwidth.dashboard.username'),
+                $config->get('bandwidth.dashboard.password'),
+                ['url' => $config->get('bandwidth.dashboard.url')]
+            );
         });
     }
 }

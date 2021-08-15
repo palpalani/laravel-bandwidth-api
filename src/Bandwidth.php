@@ -3,6 +3,7 @@
 namespace palPalani\Bandwidth;
 
 use BandwidthLib\Messaging\Models\MessageRequest;
+use Iris\Account;
 use Throwable;
 
 class Bandwidth
@@ -23,5 +24,10 @@ class Bandwidth
         } catch (Throwable $e) {
             print_r($e);
         }
+    }
+
+    public function getAccount(): Account
+    {
+        return new Account(config('bandwidth.messaging.account_id'), app('phone'));
     }
 }

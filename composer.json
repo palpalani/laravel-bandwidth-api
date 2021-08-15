@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": "^8.0",
+        "bandwidth/iris": "^3.3",
         "bandwidth/sdk": "^7.0",
         "illuminate/contracts": "^8.37",
         "spatie/laravel-package-tools": "^1.4.3"
@@ -51,10 +52,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelBandwidthServiceProvider"
+                "BandwidthServiceProvider"
             ],
             "aliases": {
-                "LaravelBandwidthApi": "LaravelBandwidthFacade"
+                "Bandwidth": "BandwidthFacade"
             }
         }
     },
