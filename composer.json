@@ -17,8 +17,9 @@
     ],
     "require": {
         "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.37"
+        "bandwidth/sdk": "^7.0",
+        "illuminate/contracts": "^8.37",
+        "spatie/laravel-package-tools": "^1.4.3"
     },
     "require-dev": {
         "brianium/paratest": "^6.2",
@@ -30,13 +31,13 @@
     },
     "autoload": {
         "psr-4": {
-            "palPalani\\LaravelBandwidth\\": "src",
-            "palPalani\\LaravelBandwidth\\Database\\Factories\\": "database/factories"
+            "palPalani\\Bandwidth\\": "src",
+            "palPalani\\Bandwidth\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "palPalani\\LaravelBandwidth\\Tests\\": "tests"
+            "palPalani\\Bandwidth\\Tests\\": "tests"
         }
     },
     "scripts": {
