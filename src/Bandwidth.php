@@ -4,7 +4,6 @@ namespace palPalani\Bandwidth;
 
 use BandwidthLib\Messaging\Models\MessageRequest;
 use Throwable;
-use palPalani\Bandwidth\BandwidthFacade;
 
 class Bandwidth
 {

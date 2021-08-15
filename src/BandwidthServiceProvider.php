@@ -29,7 +29,7 @@ class BandwidthServiceProvider extends PackageServiceProvider
 
         $this->app->bind('bandwidth', static function () use ($config): Mailgun {
             $config = new BandwidthLib\Configuration(
-                array(
+                [
                     'messagingBasicAuthUserName' => $config->get('bandwidth.messaging.username'),
                     'messagingBasicAuthPassword' => $config->get('bandwidth.messaging.password'),
                     'voiceBasicAuthUserName' => $config->get('bandwidth.voice.username'),
@@ -38,8 +38,9 @@ class BandwidthServiceProvider extends PackageServiceProvider
                     'twoFactorAuthBasicAuthPassword' => $config->get('bandwidth.twoFactor.password'),
                     'webRtcBasicAuthUserName' => $config->get('bandwidth.webRtc.username'),
                     'webRtcBasicAuthPassword' => $config->get('bandwidth.webRtc.password'),
-                )
+                ]
             );
+
             return new BandwidthLib\BandwidthClient($config);
         });
     }
