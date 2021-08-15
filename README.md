@@ -53,11 +53,20 @@ return [
 
 ## Usage
 
+Sending basic SMS text message using Bandwidth API.
+
 ```php
 $from = '';
 $to = '';
 $bandwidth = new palPalani\Bandwidth();
 echo $bandwidth->sendMessage($from, $to, 'Hello, Greetings!');
+```
+
+Accessing dashboard API:
+
+```php
+$bandwidth = new palPalani\Bandwidth();
+$account = $bandwidth->getAccount();
 ```
 
 ## Testing
