@@ -32,7 +32,22 @@ This is the contents of the published config file:
 
 ```php
 return [
-    
+    'messaging' => [
+        'username' => env('BANDWIDTH_MESSAGING_USERNAME'),
+        'password' => env('BANDWIDTH_MESSAGING_PASSWORD'),
+    ],
+    'voice' => [
+        'username' => env('BANDWIDTH_VOICE_USERNAME'),
+        'password' => env('BANDWIDTH_VOICE_PASSWORD'),
+    ],
+    'twoFactor' => [
+        'username' => env('BANDWIDTH_TWO_FACTOR_USERNAME'),
+        'password' => env('BANDWIDTH_TWO_FACTOR_PASSWORD'),
+    ],
+    'webRtc' => [
+        'username' => env('BANDWIDTH_WEBRTC_USERNAME'),
+        'password' => env('BANDWIDTH_WEBRTC_PASSWORD'),
+    ],
 ];
 ```
 
