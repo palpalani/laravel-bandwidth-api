@@ -2,9 +2,9 @@
 
 namespace palPalani\LaravelBandwidthApi;
 
+use palPalani\LaravelBandwidthApi\Commands\LaravelBandwidthApiCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use palPalani\LaravelBandwidthApi\Commands\LaravelBandwidthApiCommand;
 
 class LaravelBandwidthApiServiceProvider extends PackageServiceProvider
 {
