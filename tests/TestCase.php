@@ -1,10 +1,10 @@
 <?php
 
-namespace palPalani\LaravelBandwidthApi\Tests;
+namespace palPalani\LaravelBandwidth\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use palPalani\LaravelBandwidthApi\LaravelBandwidthApiServiceProvider;
+use palPalani\LaravelBandwidth\LaravelBandwidthServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'palPalani\\LaravelBandwidthApi\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'palPalani\\LaravelBandwidth\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            LaravelBandwidthApiServiceProvider::class,
+            LaravelBandwidthServiceProvider::class,
         ];
     }
 

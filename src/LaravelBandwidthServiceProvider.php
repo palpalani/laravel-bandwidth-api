@@ -1,12 +1,12 @@
 <?php
 
-namespace palPalani\LaravelBandwidthApi;
+namespace palPalani\LaravelBandwidth;
 
 use palPalani\LaravelBandwidthApi\Commands\LaravelBandwidthApiCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class LaravelBandwidthApiServiceProvider extends PackageServiceProvider
+class LaravelBandwidthServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace palPalani\LaravelBandwidthApi;
+namespace palPalani\LaravelBandwidth;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \palPalani\LaravelBandwidthApi\LaravelBandwidthApi
+ * @see \palPalani\LaravelBandwidthApi\LaravelBandwidth
  */
-class LaravelBandwidthApiFacade extends Facade
+class LaravelBandwidthFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {

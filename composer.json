@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "palPalani\\LaravelBandwidthApi\\": "src",
-            "palPalani\\LaravelBandwidthApi\\Database\\Factories\\": "database/factories"
+            "palPalani\\LaravelBandwidth\\": "src",
+            "palPalani\\LaravelBandwidth\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "palPalani\\LaravelBandwidthApi\\Tests\\": "tests"
+            "palPalani\\LaravelBandwidth\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "palPalani\\LaravelBandwidthApi\\LaravelBandwidthApiServiceProvider"
+                "LaravelBandwidthServiceProvider"
             ],
             "aliases": {
-                "LaravelBandwidthApi": "palPalani\\LaravelBandwidthApi\\LaravelBandwidthApiFacade"
+                "LaravelBandwidthApi": "LaravelBandwidthFacade"
             }
         }
     },
