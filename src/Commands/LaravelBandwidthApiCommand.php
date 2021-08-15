@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace palPalani\LaravelBandwidthApi\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelBandwidthApiCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-bandwidth-api';
 
     public $description = 'My command';
 

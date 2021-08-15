@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace palPalani\LaravelBandwidthApi\Tests;
 
 class ExampleTest extends TestCase
 {

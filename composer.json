@@ -1,17 +1,17 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "palpalani/laravel-bandwidth-api",
+    "description": "This is my package LaravelBandwidthApi",
     "keywords": [
-        ":vendor_name",
+        "palPalani",
         "laravel",
-        "package_slug"
+        "laravel-bandwidth-api"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/palpalani/laravel-bandwidth-api",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "palPalani",
+            "email": "palani.p@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "palPalani\\LaravelBandwidthApi\\": "src",
+            "palPalani\\LaravelBandwidthApi\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "palPalani\\LaravelBandwidthApi\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -50,10 +50,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "palPalani\\LaravelBandwidthApi\\LaravelBandwidthApiServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "LaravelBandwidthApi": "palPalani\\LaravelBandwidthApi\\LaravelBandwidthApiFacade"
             }
         }
     },
