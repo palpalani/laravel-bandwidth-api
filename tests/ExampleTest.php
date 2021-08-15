@@ -1,6 +1,6 @@
 <?php
 
-namespace palPalani\LaravelBandwidthApi\Tests;
+namespace palPalani\Bandwidth\Tests;
 
 class ExampleTest extends TestCase
 {
