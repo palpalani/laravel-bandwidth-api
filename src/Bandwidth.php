@@ -9,7 +9,7 @@ class Bandwidth
 {
     public function sendMessage(string $from, array $to, string $text)
     {
-        $messagingClient = BandwidthFacade::getMessaging()->getClient();
+        $messagingClient = app('bandwidth')->getMessaging()->getClient();
 
         $body = new MessageRequest();
         $body->from = $from;

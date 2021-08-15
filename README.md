@@ -54,8 +54,10 @@ return [
 ## Usage
 
 ```php
-$laravel-bandwidth-api = new palPalani\LaravelBandwidthApi();
-echo $laravel-bandwidth-api->echoPhrase('Hello, Spatie!');
+$from = '';
+$to = '';
+$bandwidth = new palPalani\Bandwidth();
+echo $bandwidth->sendMessage($from, $to, 'Hello, Greetings!');
 ```
 
 ## Testing
