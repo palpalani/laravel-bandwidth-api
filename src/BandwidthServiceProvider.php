@@ -25,7 +25,7 @@ class BandwidthServiceProvider extends PackageServiceProvider
             ->hasCommand(LaravelBandwidthApiCommand::class);
     }
 
-    public function register(): void
+    public function registeringPackage(): void
     {
         $config = $this->app->make('config');
 
