@@ -4,7 +4,6 @@ namespace palPalani\Bandwidth;
 
 use BandwidthLib\BandwidthClient;
 use BandwidthLib\Configuration;
-use palPalani\LaravelBandwidthApi\Commands\LaravelBandwidthApiCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -20,9 +19,8 @@ class BandwidthServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-bandwidth-api')
             ->hasConfigFile('bandwidth')
-            ->hasViews()
-            ->hasMigration('create_laravel-bandwidth-api_table')
-            ->hasCommand(LaravelBandwidthApiCommand::class);
+            //->hasViews()
+            ->hasMigration('create_laravel-bandwidth-api_table');
     }
 
     public function packageRegistered(): void
