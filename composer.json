@@ -52,10 +52,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BandwidthServiceProvider"
+                "palPalani\\Bandwidth\\BandwidthServiceProvider"
             ],
             "aliases": {
-                "Bandwidth": "BandwidthFacade"
+                "Bandwidth": "palPalani\\Bandwidth\\BandwidthFacade"
             }
         }
     },
