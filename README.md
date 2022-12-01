@@ -6,7 +6,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/palpalani/laravel-bandwidth-api.svg?style=flat-square)](https://packagist.org/packages/palpalani/laravel-bandwidth-api)
 
 ---
-Simple wrapper for BandWidth API.
+Simple wrapper for BandWidth API SDK.
 
 ## Installation
 
