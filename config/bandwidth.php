@@ -1,4 +1,5 @@
 <?php
+
 // config for palPalani/ClassName
 return [
     'messaging' => [
@@ -29,5 +30,5 @@ return [
         'username' => env('BANDWIDTH_DASHBOARD_USERNAME'),
         'password' => env('BANDWIDTH_DASHBOARD_PASSWORD'),
         'url' => env('BANDWIDTH_DASHBOARD_API_URL', 'https://dashboard.bandwidth.com/api/'),
-    ]
+    ],
 ];
