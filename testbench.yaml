@@ -1,2 +1,2 @@
 providers:
-  - palPalani\LaravelBandwidthApi\LaravelBandwidthApiServiceProvider
+  - palPalani\Bandwidth\BandwidthServiceProvider
