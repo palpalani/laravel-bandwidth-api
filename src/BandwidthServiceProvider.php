@@ -18,10 +18,9 @@ class BandwidthServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-bandwidth-api')
-            ->hasConfigFile('bandwidth')
+            ->hasConfigFile('bandwidth');
             //->hasViews()
             //->hasMigration('create_laravel-bandwidth-api_table')
-        ;
     }
 
     public function packageRegistered(): void
