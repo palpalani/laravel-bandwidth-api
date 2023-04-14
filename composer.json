@@ -19,15 +19,21 @@
         "php": "^8.1",
         "bandwidth/iris": "^4.0",
         "bandwidth/sdk": "^10.0",
-        "illuminate/contracts": "^9.0|^10.0",
-        "spatie/laravel-package-tools": "^1.4"
+        "illuminate/contracts": "^10.0",
+        "spatie/laravel-package-tools": "^1.14"
     },
     "require-dev": {
+        "laravel/pint": "^1.0",
         "brianium/paratest": "^6.2|^7.0",
         "nunomaduro/collision": "^6.0|^7.0",
+        "nunomaduro/larastan": "^2.0.1",
         "orchestra/testbench": "^8.0",
-        "phpunit/phpunit": "^10.0",
-        "vimeo/psalm": "^5.0"
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0"
     },
     "autoload": {
         "psr-4": {
