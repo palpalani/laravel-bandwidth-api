@@ -17,8 +17,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "bandwidth/iris": "^4.0",
-        "bandwidth/sdk": "^10.0",
+        "bandwidth/iris": "^7.0",
+        "bandwidth/sdk": "^10.6",
         "illuminate/contracts": "^10.0|^11.0",
         "spatie/laravel-package-tools": "^1.14"
     },
