@@ -12,7 +12,7 @@ class Bandwidth
     {
         $messagingClient = app('bandwidth')->getMessaging()->getClient();
 
-        $body = new MessageRequest();
+        $body = new MessageRequest;
         $body->from = $from;
         $body->to = $to;
         $body->applicationId = '1234-ce-4567-de';
