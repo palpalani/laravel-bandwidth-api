@@ -58,9 +58,8 @@ Sending basic SMS text message using Bandwidth API.
 ```php
 $from = '';
 $to = '';
-$applicationId = '';
 $bandwidth = new palPalani\Bandwidth();
-echo $bandwidth->sendMessage($from, $to, 'Hello, Greetings!', $applicationId);
+echo $bandwidth->sendMessage($from, $to, 'Hello, Greetings!');
 ```
 
 Accessing dashboard API:

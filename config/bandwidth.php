@@ -6,6 +6,7 @@ return [
         'username' => env('BANDWIDTH_MESSAGING_USERNAME'),
         'password' => env('BANDWIDTH_MESSAGING_PASSWORD'),
         'account_id' => env('BANDWIDTH_MESSAGING_ACCOUNT_ID'),
+        'application_id' => env('BANDWIDTH_MESSAGING_APPLICATION_ID'),
     ],
 
     'voice' => [

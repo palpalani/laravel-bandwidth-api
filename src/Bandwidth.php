@@ -8,14 +8,14 @@ use Throwable;
 
 class Bandwidth
 {
-    public function sendMessage(string $from, array $to, string $text, string $applicationId)
+    public function sendMessage(string $from, array $to, string $text)
     {
         $messagingClient = app('bandwidth')->getMessaging()->getClient();
 
         $body = new MessageRequest;
         $body->from = $from;
         $body->to = $to;
-        $body->applicationId = $applicationId;
+        $body->applicationId = config('bandwidth.messaging.application_id');
         $body->text = $text;
 
         try {
