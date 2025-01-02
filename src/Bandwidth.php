@@ -15,7 +15,7 @@ class Bandwidth
         $body = new MessageRequest;
         $body->from = $from;
         $body->to = $to;
-        $body->applicationId = '1234-ce-4567-de';
+        $body->applicationId = config('bandwidth.messaging.application_id');
         $body->text = $text;
 
         try {
