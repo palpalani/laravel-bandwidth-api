@@ -21,19 +21,32 @@ class Bandwidth
         try {
             $response = $messagingClient->createMessage(config('bandwidth.messaging.account_id'), $body);
 
+            $result = $this->extractResult($response);
+
+            $messageId = $result->id ?? null;
+
             return [
                 'success' => true,
                 'message' => 'Message sent successfully.',
-                'data' => $response->getResult(),
+                'id' => $messageId,
+                'data' => $result,
             ];
         } catch (Throwable $e) {
-
             return [
                 'success' => false,
                 'message' => 'Failed to send message.',
                 'error' => $e->getMessage(),
             ];
         }
+    }
+
+    private function extractResult($response)
+    {
+        if ($response instanceof \BandwidthLib\Http\ApiResponse) {
+            return $response->getResult(); 
+        }
+
+        throw new \RuntimeException('Unexpected response type.');
     }
 
     public function getAccount(): Account
