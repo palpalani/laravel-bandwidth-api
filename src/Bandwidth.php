@@ -20,9 +20,19 @@ class Bandwidth
 
         try {
             $response = $messagingClient->createMessage(config('bandwidth.messaging.account_id'), $body);
-            print_r($response);
+
+            return [
+                'success' => true,
+                'message' => 'Message sent successfully.',
+                'data' => $response->getResult(),
+            ];
         } catch (Throwable $e) {
-            print_r($e);
+
+            return [
+                'success' => false,
+                'message' => 'Failed to send message.',
+                'error' => $e->getMessage(),
+            ];
         }
     }
 
