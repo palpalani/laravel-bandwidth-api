@@ -8,7 +8,7 @@ use Throwable;
 
 class Bandwidth
 {
-    public function sendMessage(string $from, array $to, string $text)
+    public function sendMessage(string $from, array $to, string $text, string|null $tag = null)
     {
         $messagingClient = app('bandwidth')->getMessaging()->getClient();
 
@@ -17,6 +17,7 @@ class Bandwidth
         $body->to = $to;
         $body->applicationId = config('bandwidth.messaging.application_id');
         $body->text = $text;
+        $body->tag = $tag;
 
         try {
             $response = $messagingClient->createMessage(config('bandwidth.messaging.account_id'), $body);
