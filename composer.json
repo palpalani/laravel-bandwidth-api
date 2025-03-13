@@ -19,7 +19,7 @@
         "php": "^8.2",
         "bandwidth/iris": "^4.3",
         "bandwidth/sdk": "^11.0",
-        "illuminate/contracts": "^10.0|^11.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
         "spatie/laravel-package-tools": "^1.14"
     },
     "require-dev": {
@@ -27,7 +27,7 @@
         "brianium/paratest": "^6.2|^7.0",
         "nunomaduro/collision": "^7.0|^8.1",
         "larastan/larastan": "^3.0.0",
-        "orchestra/testbench": "^8.0|^9.0",
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
         "pestphp/pest": "^3.0",
         "pestphp/pest-plugin-arch": "^3.0",
         "pestphp/pest-plugin-laravel": "^3.0",
