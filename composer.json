@@ -1,13 +1,12 @@
 {
     "name": "palpalani/laravel-bandwidth-api",
     "description": "This is my package LaravelBandwidthApi",
+    "license": "MIT",
     "keywords": [
         "palPalani",
         "laravel",
         "laravel-bandwidth-api"
     ],
-    "homepage": "https://github.com/palpalani/laravel-bandwidth-api",
-    "license": "MIT",
     "authors": [
         {
             "name": "palPalani",
@@ -15,18 +14,19 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/palpalani/laravel-bandwidth-api",
     "require": {
         "php": "^8.3",
         "bandwidth/iris": "^4.3",
         "bandwidth/sdk": "^11.0",
-        "illuminate/contracts": "^11.0|^12.0",
+        "illuminate/contracts": "^11.0 || ^12.0",
         "spatie/laravel-package-tools": "^1.14"
     },
     "require-dev": {
-        "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.0|^8.1",
         "larastan/larastan": "^3.0.0",
-        "orchestra/testbench": "^9.0|^10.0",
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.0 || ^8.1",
+        "orchestra/testbench": "^9.0 || ^10.0",
         "pestphp/pest": "^4.0",
         "pestphp/pest-plugin-arch": "^4.0",
         "pestphp/pest-plugin-laravel": "^4.0",
@@ -34,6 +34,8 @@
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "palPalani\\Bandwidth\\": "src"
@@ -44,28 +46,26 @@
             "palPalani\\Bandwidth\\Tests\\": "tests"
         }
     },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Bandwidth": "palPalani\\Bandwidth\\Facades\\Bandwidth"
+            },
+            "providers": [
+                "palPalani\\Bandwidth\\BandwidthServiceProvider"
+            ]
+        }
+    },
     "scripts": {
         "psalm": "vendor/bin/psalm",
         "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "palPalani\\Bandwidth\\BandwidthServiceProvider"
-            ],
-            "aliases": {
-                "Bandwidth": "palPalani\\Bandwidth\\Facades\\Bandwidth"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
