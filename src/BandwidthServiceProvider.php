@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace palPalani\Bandwidth;
 
 use BandwidthLib\BandwidthClient;
@@ -27,7 +29,7 @@ class BandwidthServiceProvider extends PackageServiceProvider
     {
         $config = $this->app->make('config');
 
-        $this->app->bind('bandwidth', static function () use ($config) {
+        $this->app->bind('bandwidth.client', static function () use ($config) {
             $config = new Configuration(
                 [
                     'messagingBasicAuthUserName' => $config->get('bandwidth.messaging.username'),
@@ -42,6 +44,10 @@ class BandwidthServiceProvider extends PackageServiceProvider
             );
 
             return new BandwidthClient($config);
+        });
+
+        $this->app->singleton('bandwidth', static function () {
+            return new Bandwidth();
         });
 
         $this->app->bind('phone', static function () use ($config) {

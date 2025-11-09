@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace palPalani\Bandwidth;
 
 use BandwidthLib\Messaging\Models\MessageRequest;
@@ -8,9 +10,9 @@ use Throwable;
 
 class Bandwidth
 {
-    public function sendMessage(string $from, array $to, string $text, string|null $tag = null)
+    public function sendMessage(string $from, array $to, string $text, string|null $tag = null): array
     {
-        $messagingClient = app('bandwidth')->getMessaging()->getClient();
+        $messagingClient = app('bandwidth.client')->getMessaging()->getClient();
 
         $body = new MessageRequest;
         $body->from = $from;

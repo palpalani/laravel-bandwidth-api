@@ -62,7 +62,7 @@
                 "palPalani\\Bandwidth\\BandwidthServiceProvider"
             ],
             "aliases": {
-                "Bandwidth": "palPalani\\Bandwidth\\BandwidthFacade"
+                "Bandwidth": "palPalani\\Bandwidth\\Facades\\Bandwidth"
             }
         }
     },
