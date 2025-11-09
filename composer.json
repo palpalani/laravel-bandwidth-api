@@ -1,12 +1,24 @@
 {
     "name": "palpalani/laravel-bandwidth-api",
-    "description": "This is my package LaravelBandwidthApi",
-    "license": "MIT",
+    "type": "library",
+    "description": "Laravel wrapper for Bandwidth API - Send SMS/MMS messages, make voice calls, implement two-factor authentication, and integrate WebRTC communications",
     "keywords": [
-        "palPalani",
         "laravel",
-        "laravel-bandwidth-api"
+        "bandwidth",
+        "sms",
+        "mms",
+        "voice",
+        "webrtc",
+        "two-factor-authentication",
+        "2fa",
+        "messaging",
+        "communications",
+        "api",
+        "wrapper"
     ],
+    "homepage": "https://github.com/palpalani/laravel-bandwidth-api",
+    "readme": "README.md",
+    "license": "MIT",
     "authors": [
         {
             "name": "palPalani",
@@ -14,17 +26,27 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/palpalani/laravel-bandwidth-api",
+    "support": {
+        "issues": "https://github.com/palpalani/laravel-bandwidth-api/issues",
+        "source": "https://github.com/palpalani/laravel-bandwidth-api",
+        "docs": "https://github.com/palpalani/laravel-bandwidth-api/blob/main/README.md"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/palpalani"
+        }
+    ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.2",
         "bandwidth/iris": "^4.3",
         "bandwidth/sdk": "^11.0",
         "illuminate/contracts": "^11.0 || ^12.0",
-        "spatie/laravel-package-tools": "^1.14"
+        "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
-        "larastan/larastan": "^3.0.0",
-        "laravel/pint": "^1.0",
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18",
         "nunomaduro/collision": "^7.0 || ^8.1",
         "orchestra/testbench": "^9.0 || ^10.0",
         "pestphp/pest": "^4.0",
@@ -34,8 +56,9 @@
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0"
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "suggest": {
+        "ext-intl": "Required for international phone number formatting"
+    },
     "autoload": {
         "psr-4": {
             "palPalani\\Bandwidth\\": "src"
@@ -46,14 +69,21 @@
             "palPalani\\Bandwidth\\Tests\\": "tests"
         }
     },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist"
     },
     "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        },
         "laravel": {
             "aliases": {
                 "Bandwidth": "palPalani\\Bandwidth\\Facades\\Bandwidth"
@@ -64,8 +94,37 @@
         }
     },
     "scripts": {
-        "psalm": "vendor/bin/psalm",
-        "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "scripts-descriptions": {
+        "analyse": "Run static analysis with PHPStan",
+        "test": "Run the test suite with Pest",
+        "test-coverage": "Run tests with coverage report",
+        "format": "Format code using Laravel Pint"
+    },
+    "archive": {
+        "exclude": [
+            ".github",
+            ".phpunit.cache",
+            "build",
+            "tests",
+            "vendor",
+            ".editorconfig",
+            ".gitattributes",
+            ".gitignore",
+            "phpstan.neon.dist",
+            "phpstan-baseline.neon",
+            "phpunit.xml.dist",
+            "testbench.yaml"
+        ]
     }
 }
