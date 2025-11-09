@@ -1,0 +1,151 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior in laravel-bandwidth-api
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the information below to help us resolve the issue.
+
+  - type: checkboxes
+    id: pre-checks
+    attributes:
+      label: Pre-submission Checklist
+      description: Please verify the following before submitting
+      options:
+        - label: I have searched existing issues to ensure this bug hasn't been reported
+          required: true
+        - label: I have tested with the latest version of the package
+          required: true
+        - label: I have reviewed the documentation and FAQ
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: When I call sendMessage(), I get...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the behavior
+      placeholder: |
+        1. Install package version X.Y.Z
+        2. Configure credentials in .env
+        3. Call Bandwidth::sendMessage(...)
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+      placeholder: The message should be sent successfully
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened
+      placeholder: An exception was thrown with message...
+    validations:
+      required: true
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Code Sample
+      description: Please provide a minimal code sample that reproduces the issue
+      render: php
+      placeholder: |
+        use palPalani\Bandwidth\Facades\Bandwidth;
+
+        $result = Bandwidth::sendMessage(
+            from: '+1234567890',
+            to: ['+0987654321'],
+            text: 'Test message'
+        );
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error Output
+      description: Full error message or stack trace
+      render: shell
+      placeholder: Paste the complete error message here
+
+  - type: input
+    id: version
+    attributes:
+      label: Package Version
+      description: Which version of laravel-bandwidth-api are you using?
+      placeholder: "0.7.0"
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP Version
+      description: Run `php -v` to get your PHP version
+      placeholder: "8.4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: laravel-version
+    attributes:
+      label: Laravel Version
+      description: Which Laravel version are you using?
+      placeholder: "12.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System
+      options:
+        - macOS
+        - Linux (Ubuntu)
+        - Linux (Other)
+        - Windows (WSL)
+        - Windows (Native)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration
+      description: Relevant configuration (sanitize sensitive data!)
+      render: php
+      placeholder: |
+        // config/bandwidth.php or .env settings
+        // Remove passwords/tokens!
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other context, screenshots, or information about the problem
+      placeholder: This started happening after...
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I'm willing to submit a PR to fix this issue

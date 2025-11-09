@@ -8,9 +8,15 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: php-cs-fixer-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   php-code-styling:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: "!contains(github.event.head_commit.message, 'Fix styling')"
 
     steps:
       - name: Checkout code

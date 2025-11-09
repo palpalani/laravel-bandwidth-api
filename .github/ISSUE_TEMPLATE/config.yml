@@ -1,11 +1,21 @@
 blank_issues_enabled: false
 contact_links:
-    - name: Ask a question
-      url: https://github.com/palpalani/laravel-bandwidth-api/discussions/new?category=q-a
-      about: Ask the community for help
-    - name: Request a feature
-      url: https://github.com/palpalani/laravel-bandwidth-api/discussions/new?category=ideas
-      about: Share ideas for new features
-    - name: Report a bug
-      url: https://github.com/palpalani/laravel-bandwidth-api/issues/new
-      about: Report a reproducable bug
+  - name: 💬 Ask a Question
+    url: https://github.com/palpalani/laravel-bandwidth-api/discussions/new?category=q-a
+    about: Ask the community for help with usage, configuration, or best practices
+
+  - name: 💭 Start a Discussion
+    url: https://github.com/palpalani/laravel-bandwidth-api/discussions/new?category=general
+    about: Discuss ideas, share experiences, or talk about the package
+
+  - name: 📚 Read the Documentation
+    url: https://github.com/palpalani/laravel-bandwidth-api#readme
+    about: Check the README and documentation for answers
+
+  - name: 🔒 Report a Security Vulnerability
+    url: https://github.com/palpalani/laravel-bandwidth-api/security/policy
+    about: Report security issues privately (do not create a public issue)
+
+  - name: 📖 Bandwidth API Documentation
+    url: https://dev.bandwidth.com/
+    about: Official Bandwidth API documentation and guides

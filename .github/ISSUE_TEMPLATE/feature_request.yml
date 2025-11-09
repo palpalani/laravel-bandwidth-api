@@ -1,0 +1,104 @@
+name: 💡 Feature Request
+description: Suggest a new feature or enhancement for laravel-bandwidth-api
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please provide as much detail as possible.
+
+  - type: checkboxes
+    id: pre-checks
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have searched existing issues and discussions to ensure this hasn't been suggested
+          required: true
+        - label: I have reviewed the documentation to ensure this feature doesn't already exist
+          required: true
+        - label: This feature would benefit multiple users, not just my specific use case
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve? What's the use case?
+      placeholder: As a developer, I need to... because...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this feature to work?
+      placeholder: |
+        I would like to be able to call:
+
+        Bandwidth::sendMMS(
+            from: '+1234567890',
+            to: ['+0987654321'],
+            text: 'Check this out',
+            media: ['https://example.com/image.jpg']
+        );
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or workarounds?
+      placeholder: I could use the direct SDK access, but...
+
+  - type: textarea
+    id: api-design
+    attributes:
+      label: Proposed API Design
+      description: If applicable, show what the API would look like
+      render: php
+      placeholder: |
+        // Method signature
+        public function newFeature(string $param): array
+
+        // Usage example
+        $result = Bandwidth::newFeature('value');
+
+  - type: dropdown
+    id: bandwidth-api
+    attributes:
+      label: Bandwidth API Support
+      description: Does the Bandwidth API already support this feature?
+      options:
+        - "Yes - the Bandwidth API supports this"
+        - "No - this would be a wrapper convenience feature"
+        - "Unsure"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: breaking-change
+    attributes:
+      label: Breaking Change
+      description: Would this be a breaking change?
+      options:
+        - "No - fully backward compatible"
+        - "Yes - would require a major version bump"
+        - "Unsure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other context, examples, or references
+      placeholder: Similar packages like X have this feature...
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I'm willing to submit a PR to implement this feature

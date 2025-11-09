@@ -1,18 +1,59 @@
 version: 2
+
 updates:
-  # Maintain dependencies for Composer.
+  # Maintain dependencies for Composer
   - package-ecosystem: composer
     directory: "/"
     schedule:
       interval: monthly
+      day: monday
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 5
     labels:
       - dependencies
+      - composer
     versioning-strategy: increase-if-necessary
     rebase-strategy: disabled
-    
-  - package-ecosystem: "github-actions"
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    reviewers:
+      - palpalani
+    groups:
+      # Group patch and minor updates together
+      php-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+      # Keep major updates separate for review
+      php-major-updates:
+        patterns:
+          - "*"
+        update-types:
+          - major
+
+  # Maintain GitHub Actions dependencies
+  - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: "UTC"
+    open-pull-requests-limit: 3
     labels:
-      - "dependencies"
+      - dependencies
+      - github-actions
+    commit-message:
+      prefix: "chore(ci)"
+      include: "scope"
+    reviewers:
+      - palpalani
+    groups:
+      # Group all action updates together
+      github-actions:
+        patterns:
+          - "*"

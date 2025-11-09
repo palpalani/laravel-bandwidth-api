@@ -4,9 +4,17 @@ on:
   release:
     types: [released]
 
+permissions:
+  contents: write
+
+concurrency:
+  group: changelog-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - name: Checkout code
